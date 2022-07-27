@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "health-check")
+@RequestMapping(value = "/responseTesting")
 public class HealthApi {
 
-	@GetMapping(value = {"", "/", "/ping"})
+	@GetMapping(value = {"", "/", "/health-check"})
 	public ResponseEntity<Object> healthCheck() {
 		return new ResponseEntity<Object>("{\"status\": true, \"message\":\"Server is Working fine.\"}", HttpStatus.OK);
 	}
